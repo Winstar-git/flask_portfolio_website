@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container profile-grid">
+        <aside class="profile-left">
+            <div class="left-card">
+                <div class="avatar-big">
+                    <img src="/static/1759092191337.jpg" alt="profile">
+                </div>
+                <h2 class="pf-name">{{ person.name }}</h2>
+                <div class="pf-role">{{ person.role }}</div>
+
+                <div class="pf-quote">
+                    <blockquote>
+                        "You have power over your mind — not outside events. Realize this, and you will find strength." 
+                        <footer>— Marcus Aurelius</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </aside>
+
+        <main class="profile-right">
+            <div class="profile-card">
+                <h2 class="section-title">Hi there 👋</h2>
+                <p class="lead">Welcome to my portfolio!</p>
+                <p class="intro">I'm James Starwin, a Computer Engineering student at the Polytechnic University of the Philippines, passionate about software development, AI, and computer networks. I love building, experimenting, and learning across multiple tech domains to expand my skills and explore new opportunities.</p>
+
+                <hr>
+
+                <h3 class="section-title">🌱 Currently Exploring</h3>
+                <ul class="bullet-list">
+                    <li><strong>Computer Networks</strong> – Understanding the backbone of communication systems</li>
+                    <li><strong>Python Development</strong> – Creating projects with Tkinter, AI models, and automation</li>
+                    <li><strong>Software & System Development</strong> – Transforming terminal-based applications into interactive GUIs</li>
+                </ul>
+
+                <hr>
+
+                <h3 class="section-title">🛠 What I'm Working On</h3>
+                <ul class="check-list">
+                    <li>Improving my DumbGPT chatbot for local execution and better AI responses</li>
+                    <li>Developing Python projects</li>
+                    <li>Strengthening foundations in Computer Networks</li>
+                </ul>
+
+                <hr>
+
+                <h3 class="section-title">📫 Let's Connect</h3>
+                <p>Email: <a href="mailto:james.canoy87@gmail.com">james.canoy87@gmail.com</a></p>
+                <p>GitHub: <a href="https://github.com/Winstar-git" target="_blank" rel="noopener noreferrer">Winstar-git</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer">/in/your-linkedin</a></p>
+            </div>
+        </main>
+    </div>
+{% endblock %}

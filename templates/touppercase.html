@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="auth-wrapper">
+        <div class="auth-box">
+            <h1>Convert to Uppercase</h1>
+            <div class="auth-note">Type text and press Convert</div>
+            <form action="/touppercase" method="post">
+                <input class="auth-input" type="text" id="inputString" name="text" placeholder="Enter text...">
+                <div class="auth-actions">
+                    <button type="submit">Convert</button>
+                </div>
+            </form>
+
+            {% if result %}
+            <div class="result">Converted: <strong>{{ result }}</strong></div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

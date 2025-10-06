@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="profile-card">
+      <h2 class="section-title">Projects</h2>
+      <p class="lead">A selection of projects hosted on my GitHub.</p>
+
+      <div class="projects">
+        {% if projects %}
+          {% for p in projects %}
+            <div class="project">
+              <h4>{{ p.title }}</h4>
+              <p>{{ p.description }}</p>
+              {% if p.repo_url %}
+                <p><a href="{{ p.repo_url }}" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>No projects found yet. Add entries to <code>data/projects.json</code>.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

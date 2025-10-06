@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section class="hero">
+        <div class="left">
+            <h1>Exploring code, creativity, and innovation — welcome to my digital space!</h1>
+            <p>Welcome to my personal portfolio! Here, I share my journey as a Computer Engineering student and my growing passion for software development and technology.</p>
+            <a class="cta" href="/profile">View Profile</a>
+            <a class="cta secondary" href="/contact">Contact</a>
+        </div>
+        <div class="right">
+            <div class="profile-card">
+                <div class="avatar"><img src="/static/1759092191337.jpg" alt="profile"></div>
+                <h3>James Starwin Canoy</h3>
+                <p class="role">Computer Engineering Student</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="margin-top:1.5rem">Programming Works</h2>
+        <div class="projects">
+            <div class="project">
+                <h4>To Uppercase</h4>
+                <p>Small utility to transform text. Practice with forms and string handling.</p>
+                <a href="/touppercase">Open</a>
+            </div>
+            <div class="project">
+                <h4>Area of Circle</h4>
+                <p>Compute the area of a circle given a radius.</p>
+                <a href="/circle">Open</a>
+            </div>
+            <div class="project">
+                <h4>Area of Triangle</h4>
+                <p>Compute triangle area given base and height.</p>
+                <a href="/triangle">Open</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+

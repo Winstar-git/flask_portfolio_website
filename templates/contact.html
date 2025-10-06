@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="contact-wrapper">
+    <div class="contact-box">
+      <h1>Contact Me</h1>
+      <p>If you want to reach me, you can use the form below or use the contact info provided.</p>
+
+      <form method="post" class="contact-form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com">
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..."></textarea>
+
+        <div style="text-align:right; margin-top:0.5rem;">
+          <button type="submit">Send</button>
+        </div>
+      </form>
+
+      <h2>Contact Info</h2>
+      <p>Email: <a href="mailto:james.canoy87@gmail.com">james.canoy87@gmail.com</a></p>
+      <p>GitHub: <a href="https://github.com/Winstar-git" target="_blank" rel="noopener noreferrer">Winstar-git</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/james-starwin-canoy-90504a2a6" target="_blank" rel="noopener noreferrer">James Starwin Canoy</a></p>
+      <p>Phone: +63 9602957505</p>
+    </div>
+  </div>
+{% endblock %}

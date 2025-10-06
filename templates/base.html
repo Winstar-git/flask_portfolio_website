@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href= "/static/style.css">
+</head>
+<body>
+<nav class="navbar">
+    <div class="logo">My Portfolio</div>
+    <ul class="nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/profile">About Me</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
