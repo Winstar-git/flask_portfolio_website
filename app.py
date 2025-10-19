@@ -63,8 +63,6 @@ def projects():
         projects = []
     return render_template('projects.html', projects=projects)
 
-import os
-
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives your app a port number
     app.run(host="0.0.0.0", port=port)
