@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="profile-card converter-box">
+        <h2 class="section-title">Infix to Postfix Converter</h2>
+        <p class="lead">Convert mathematical expressions from infix (e.g. "3 + 4 * 2") to postfix notation</p>
+        
+        <div class="converter-form">
+            <form action="/infix_to_postfix" method="post">
+                <div class="input-group">
+                    <input type="text" 
+                           class="converter-input" 
+                           name="text" 
+                           placeholder="Enter infix expression (e.g. 3 + 4 * 2)"
+                           value="{{ request.form.text }}"
+                           required>
+                    <button type="submit" class="converter-button">Convert</button>
+                </div>
+            </form>
+
+            {% if result %}
+            <div class="converter-result">
+                <h4>Postfix Result:</h4>
+                <div class="result-box">{{ result }}</div>
+            </div>
+            {% endif %}
+            
+            {% if error %}
+            <div class="converter-error">
+                Error: {{ error }}
+            </div>
+            {% endif %}
+
+            <div class="converter-help">
+                <h4>Examples:</h4>
+                <ul>
+                    <li>"a + b * c" → "a b c * +"</li>
+                    <li>"3 + 4 * 2" → "3 4 2 * +"</li>
+                    <li>"(1 + 2) * 3" → "1 2 + 3 *"</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

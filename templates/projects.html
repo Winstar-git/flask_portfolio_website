@@ -12,6 +12,9 @@
             <div class="project">
               <h4>{{ p.title }}</h4>
               <p>{{ p.description }}</p>
+              {% if p.url %}
+                <p><a href="{{ p.url }}">Open</a></p>
+              {% endif %}
               {% if p.repo_url %}
                 <p><a href="{{ p.repo_url }}" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
               {% endif %}

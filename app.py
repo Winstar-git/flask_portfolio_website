@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, jsonify
 import json
 import os
 
+from stack import infix_to_postfix
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -62,6 +64,19 @@ def projects():
     except Exception:
         projects = []
     return render_template('projects.html', projects=projects)
+
+
+@app.route('/infix_to_postfix', methods=['GET', 'POST'])
+def infix_to_postfix_route():
+    result = None
+    error = None
+    if request.method == 'POST':
+        text = request.form.get('text', '')
+        try:
+            result = infix_to_postfix(text)
+        except Exception as e:
+            error = str(e)
+    return render_template('infix_to_postfix.html', result=result, error=error)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives your app a port number
