@@ -19,7 +19,7 @@
                 <h4>{{ p.title }}</h4>
                 <p>{{ p.description }}</p>
                 <div class="project-actions">
-                  <a href="{{ p.url }}" class="try-button">Try it now</a>
+                  <a href="{{ p.url }}" class="try-button">Open</a>
                 </div>
               </div>
             {% endif %}
@@ -49,7 +49,6 @@
 
   <script>
     function showSection(sectionId) {
-      // Hide all sections and deactivate all buttons
       document.querySelectorAll('.works-section').forEach(section => {
         section.classList.remove('active');
       });
@@ -57,7 +56,6 @@
         btn.classList.remove('active');
       });
       
-      // Show selected section and activate its button
       document.getElementById(sectionId).classList.add('active');
       document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
     }
