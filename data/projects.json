@@ -5,6 +5,21 @@
     "url": "/infix_to_postfix"
   },
   {
+    "title": "Circle Area Calculator",
+    "description": "Calculate the area of a circle by providing its radius. Uses the formula A = πr².",
+    "url": "/circle"
+  },
+  {
+    "title": "Triangle Area Calculator",
+    "description": "Calculate the area of a triangle using base and height measurements. Uses the formula A = ½bh.",
+    "url": "/triangle"
+  },
+  {
+    "title": "Text Uppercase Converter",
+    "description": "Convert any text to uppercase letters. A simple tool to transform text input.",
+    "url": "/touppercase"
+  },
+  {
     "title": "DumbChat",
     "description": "A simple chatbot built with the pre-trained Microsoft DialoGPT model. It can hold basic conversations, but sometimes produces random or nonsensical replies. Created using Python, this project explores AI-powered interactions and is a fun way to dive into conversational AI.",
     "repo_url": "https://github.com/Winstar-git/DumbChat"

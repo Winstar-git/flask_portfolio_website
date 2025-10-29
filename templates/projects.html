@@ -3,27 +3,63 @@
 {% block content %}
   <div class="container">
     <div class="profile-card">
-      <h2 class="section-title">Projects</h2>
-      <p class="lead">A selection of projects hosted on my GitHub.</p>
+      <h2 class="section-title">Works</h2>
+      <p class="lead">My programming works and projects</p>
 
-      <div class="projects">
-        {% if projects %}
+      <div class="works-nav">
+        <button class="works-nav-btn active" onclick="showSection('web-programs')">Web Programs</button>
+        <button class="works-nav-btn" onclick="showSection('github-projects')">GitHub Projects</button>
+      </div>
+
+      <div id="web-programs" class="works-section active">
+        <div class="projects">
           {% for p in projects %}
-            <div class="project">
-              <h4>{{ p.title }}</h4>
-              <p>{{ p.description }}</p>
-              {% if p.url %}
-                <p><a href="{{ p.url }}">Open</a></p>
-              {% endif %}
-              {% if p.repo_url %}
-                <p><a href="{{ p.repo_url }}" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
-              {% endif %}
-            </div>
+            {% if p.url %}
+              <div class="project">
+                <h4>{{ p.title }}</h4>
+                <p>{{ p.description }}</p>
+                <div class="project-actions">
+                  <a href="{{ p.url }}" class="try-button">Try it now</a>
+                </div>
+              </div>
+            {% endif %}
           {% endfor %}
-        {% else %}
-          <p>No projects found yet. Add entries to <code>data/projects.json</code>.</p>
-        {% endif %}
+        </div>
+      </div>
+
+      <div id="github-projects" class="works-section">
+        <div class="projects">
+          {% for p in projects %}
+            {% if p.repo_url %}
+              <div class="project">
+                <h4>{{ p.title }}</h4>
+                <p>{{ p.description }}</p>
+                <div class="project-actions">
+                  <a href="{{ p.repo_url }}" target="_blank" rel="noopener noreferrer" class="github-button">
+                    View on GitHub
+                  </a>
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function showSection(sectionId) {
+      // Hide all sections and deactivate all buttons
+      document.querySelectorAll('.works-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.querySelectorAll('.works-nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Show selected section and activate its button
+      document.getElementById(sectionId).classList.add('active');
+      document.querySelector(`[onclick="showSection('${sectionId}')"]`).classList.add('active');
+    }
+  </script>
 {% endblock %}
